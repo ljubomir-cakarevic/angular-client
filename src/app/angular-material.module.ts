@@ -6,7 +6,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
-
+import { MatOptionModule } from '@angular/material/core';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -17,14 +20,23 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatOptionModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule
+    
   ],
   exports:[
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatOptionModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class AngularMaterialModule { }

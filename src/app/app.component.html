@@ -1,59 +1,12 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <mat-list role="list">
-      <mat-list-item role="listitem"><button mat-button (click)="drawer.toggle()">Home</button></mat-list-item>
-      <mat-list-item role="listitem">Item 2</mat-list-item>
-      <mat-list-item role="listitem">Item 3</mat-list-item>
-    </mat-list>
-    
-    </mat-drawer>
-
-  <div class="example-sidenav-content">
-    <mat-toolbar color="primary" >
-      <button mat-button (click)="drawer.toggle()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-       <mat-icon>menu</mat-icon>
-     </button>
-     <span>My App</span>
-     <span class="example-spacer"></span>
-     <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-       <mat-icon>favorite</mat-icon>
-     </button>
-     <button fxHide.lt-sm mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-    <button >
-      <a mat-button routerLink="tutorials" class="nav-link">login</a>
-    </button>
-    <button >
-      <a mat-button routerLink=".">Link</a>
-    </button>
-   </mat-toolbar>
-
-  </div>
-
-  <section>
-    <div fxLayout="row"  fxLayout.lt-sm="column"  fxLayoutAlign="center center" fxLayoutGap="50px">
-      <div>
-        <div>
-          <h3>Heading 1</h3>
-          <div>Content 1</div>
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <h3>heading 2</h3>
-          <div>Content 2</div>
-        </div>
-      </div>
-
-      <div>
-        <div>
-          <h3>heading 3</h3>
-          <div>Content 3</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</mat-drawer-container>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+   </mat-sidenav> 
+  <mat-sidenav-content>
+    <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+  
