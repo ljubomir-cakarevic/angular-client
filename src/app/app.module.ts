@@ -20,6 +20,11 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
+import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
+import { EmployeeDetailsComponent } from './employee/employee-details/employee-details.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,11 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     SidenavListComponent,
     WelcomeComponent,
+    EmployeeListComponent,
+    CreateEmployeeComponent,
+    EmployeeDetailsComponent,
+    EmployeeComponent,
+    UpdateEmployeeComponent,
     
   ],
   imports: [
@@ -42,6 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
     AngularMaterialModule,
     FlexLayoutModule
   ],
+  
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })

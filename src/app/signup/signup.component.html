@@ -1,38 +1,50 @@
 <section class="singup-form">
-    <form action="" 
+    <form action=""     
+          
           fxLayout="column" 
           fxLayoutAlign="center center" 
           fxLayoutGap="10px" 
-          #f="ngForm" 
-          (ngSubmit)="onSubmit(f)">
+          *ngIf="!isSuccessful"
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate>
         <mat-form-field>
-            <input type="username" matInput placeholder="Your username" ngModel name="username">
+            <input type="username" name="username" matInput placeholder="Your username" [(ngModel)]="form.username" #username="ngModel">
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field hintLabel="Field must not be empty.">
             <input 
               type="email" 
+              name="email"
               matInput 
               placeholder="Your email" 
-              ngModel 
-              name="email"
+              [(ngModel)]="form.email" 
               email
               required
-              #emailInput="ngModel">
-              <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
-              <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid.</mat-error>
+              #email="ngModel">
+              <!--<mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
+              <mat-error *ngIf="!emailInput.hasError('required')">E-mail is invalid.</mat-error>-->
         </mat-form-field>
 
         <mat-form-field hintLabel="Should be at least 6 characters long.">
             <input 
-              type="password" 
+              type="password"
+              name="password" 
               matInput 
               placeholder="Your password" 
-              ngModel name="password" 
-              required minlength="6">
+              [(ngModel)]="form.password" 
+              required minlength="6"
+              #password="ngModel">
               <!--<mat-hint>Should be at least 6 characters long.</mat-hint>-->
               <mat-error>Has to be at least 6 characters long.</mat-error>
         </mat-form-field>
         <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Signup</button>
+        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+            Signup failed!<br />{{ errorMessage }}
+          </div>
     </form>
+    <div fxLayout fxLayoutAlign="center" class="alert alert-success" *ngIf="isSuccessful">
+        Your registration is successful!
+      </div>
 </section>

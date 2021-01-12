@@ -1,1 +1,47 @@
-<p>login</p>
+<section class="login-form">
+    <form action=""     
+          
+          fxLayout="column" 
+          fxLayoutAlign="center center" 
+          fxLayoutGap="10px" 
+          *ngIf="!isLoggedIn"
+          name="form"
+          (ngSubmit)="f.form.valid && onSubmit()"
+          #f="ngForm"
+          novalidate>
+        <mat-form-field>
+            <input 
+              type="username" 
+              name="username" 
+              matInput 
+              placeholder="Your username" 
+              [(ngModel)]="form.username" 
+              #username="ngModel">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Should be at least 6 characters long.">
+            <input 
+              type="password"
+              name="password" 
+              matInput 
+              placeholder="Your password" 
+              [(ngModel)]="form.password" 
+              required minlength="6"
+              #password="ngModel">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Login</button>
+        <div class="form-group">
+            <div
+              class="alert alert-danger"
+              role="alert"
+              *ngIf="f.submitted && isLoginFailed"
+              >
+              Login failed {{ errorMessage }}
+            </div>
+        </div>
+    
+    
+    </form>
+    
+    
+</section>

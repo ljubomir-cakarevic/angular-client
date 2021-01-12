@@ -1,0 +1,23 @@
+<form action=""
+      fxLayout="column" 
+      fxLayoutAlign="center center" 
+      fxLayoutGap="10px"
+      (ngSubmit) = "onSubmit()"
+      >
+      <h3> Create Employee </h3>
+        <mat-form-field hintLabel="Field must not be empty." appearance="outline">
+            <mat-label>FirstName</mat-label>
+            <input matInput [(ngModel)] = "employee.firstName" name = "firstName">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Field must not be empty." appearance="outline">
+            <mat-label>LastName</mat-label>
+            <input matInput [(ngModel)] = "employee.lastName" name = "lastName">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Field must not be empty." appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)] = "employee.emailId" name = "emailId">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">Add Employee</button>
+</form>
