@@ -1,7 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Employee } from 'src/app/model/employee';
 import { EmployeeService } from 'src/app/_services/employee.service';
 import { Router } from '@angular/router';
+import { MatSort } from '@angular/material/sort';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -10,8 +14,11 @@ import { Router } from '@angular/router';
 export class EmployeeListComponent implements OnInit {
   //employee: Employee = new Employee();
   //employees: Employee[] = [];
-  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'emailId'];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'emailId', 'actions'];
   dataSource:any;
+
+ 
+  //@ViewChild(MatSort, {static:true}) sort: MatSort;
 
   constructor(private employeeService: EmployeeService,
     private router: Router) { }

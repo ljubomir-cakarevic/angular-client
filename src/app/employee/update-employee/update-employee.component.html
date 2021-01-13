@@ -1,26 +1,23 @@
-<div class="col-md-6 offset-md-3">
-    <h3> Update Employee </h3>
-    <form (ngSubmit) = "onSubmit()">
-    
-        <div class="form-group">
-            <label> First Name</label>
-            <input type="text" class ="form-control" id = "firstName"
-                [(ngModel)] = "employee.firstName" name = "firstName">
-        </div>
-    
-        <div class="form-group">
-            <label> Last Name</label>
-            <input type="text" class ="form-control" id = "lastName"
-                [(ngModel)] = "employee.lastName" name = "lastName">
-        </div>
-    
-        <div class="form-group">
-            <label> Email Id</label>
-            <input type="text" class ="form-control" id = "emailId"
-                [(ngModel)] = "employee.emailId" name = "emailId">
-        </div>
-    
-        <button class = "btn btn-success" type ="submit">Submit</button>
-    
-    </form>
-    </div> 
+<form action=""
+      fxLayout="column" 
+      fxLayoutAlign="center center" 
+      fxLayoutGap="10px"
+      (ngSubmit) = "onSubmit()"
+      >
+      <h3> Create Employee </h3>
+        <mat-form-field hintLabel="Field must not be empty." appearance="outline">
+            <mat-label>FirstName</mat-label>
+            <input matInput [(ngModel)] = "employee.firstName" name = "firstName">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Field must not be empty." appearance="outline">
+            <mat-label>LastName</mat-label>
+            <input matInput [(ngModel)] = "employee.lastName" name = "lastName">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Field must not be empty." appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)] = "employee.emailId" name = "emailId">
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary">Edit Employee</button>
+</form>

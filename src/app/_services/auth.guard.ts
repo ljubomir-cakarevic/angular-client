@@ -14,6 +14,7 @@ export class AuthGuard implements CanActivate {
         //if user is logged in(token is present) returns true (can continue to the special route)
         if(this.authService.loggedIn()) {
             return true;
+            
         //if user is not logged in, redirect to login route
         }else {
             this.router.navigate(['/login']);

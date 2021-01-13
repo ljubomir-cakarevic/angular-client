@@ -37,7 +37,8 @@ export class AuthService {
   }
   
   loggedIn(){
-    return !!localStorage.getItem('auth-token');
+    return !localStorage.getItem('auth-token');
+    
   }
 
   private authSuccessufully(): void{
@@ -47,7 +48,7 @@ export class AuthService {
   logout(): void {
     this.tokenStorageService.signOut();
     this.router.navigate(['/login']);
-    //window.location.reload();
+    window.location.reload();
   }
 
   
