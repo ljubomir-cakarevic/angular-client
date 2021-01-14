@@ -2,31 +2,31 @@
 
 <div class="example-container mat-elevation-z8"   fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="10px">
   
-<mat-table  [dataSource]="dataSource"  > 
+<mat-table  [dataSource]="dataSource" matSort > 
 
     <ng-container matColumnDef="id" >
-      <mat-header-cell *matHeaderCellDef > Id </mat-header-cell>
+      <mat-header-cell mat-sort-header *matHeaderCellDef > Id </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <span class="mobile-label">Id</span> {{ element.id }}. 
       </mat-cell>
     </ng-container>
   
     <ng-container matColumnDef="firstName">
-      <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-header-cell mat-sort-header *matHeaderCellDef> First Name </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <span class="mobile-label">First Name</span> {{ element.firstName }} 
       </mat-cell>
     </ng-container>
   
     <ng-container matColumnDef="lastName">
-      <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Last Name </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <span class="mobile-label">Last Name</span> {{ element.lastName }} 
       </mat-cell>
     </ng-container>
   
     <ng-container matColumnDef="emailId">
-      <mat-header-cell *matHeaderCellDef> Email Id </mat-header-cell>
+      <mat-header-cell mat-sort-header *matHeaderCellDef> Email Id </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <span class="mobile-label">Email Id</span> {{ element.emailId }} 
       </mat-cell>
@@ -45,10 +45,6 @@
 
 </mat-table>
 
-<mat-paginator [length]="length"
-               [pageSize]="pageSize"
-               [pageSizeOptions]="pageSizeOptions"
-               (page)="pageEvent = $event">
-</mat-paginator>
+
 </div> 
   
