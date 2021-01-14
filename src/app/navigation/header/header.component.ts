@@ -8,7 +8,8 @@ import { AuthService } from 'src/app/_services/auth.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit  {
+  
   @Output() sidenavToggle = new EventEmitter();
   
 
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit {
   showModeratorBoard = false;
   username?: string;
 
-  constructor(private tokenStorageService: TokenStorageService,  private authService: AuthService) { }
+  constructor(private tokenStorageService: TokenStorageService,  private authService: AuthService) { } 
 
   ngOnInit(): void {
     this.isLoggedIn = !!this.tokenStorageService.getToken();
@@ -41,7 +42,7 @@ export class HeaderComponent implements OnInit {
   onLogout(){
     this.authService.logout();
   } 
-
+ 
   
 
 }

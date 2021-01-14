@@ -9,7 +9,7 @@ import { IndexComponent } from './index/index.component';
 import { LoginComponent } from "./login/login.component";
 import { SignupComponent } from './signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-import { AuthGuard } from './_services/auth.guard';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },

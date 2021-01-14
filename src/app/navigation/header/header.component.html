@@ -6,7 +6,7 @@
     </div>
     <div fxLayout fxLayoutGap="10px">
     <div>Logo</div>
-    <div><a  style="cursor: pointer" *ngIf="isLoggedIn" routerLink="/admin">Admin Board</a></div>
+    <div><a  style="cursor: pointer" *ngIf="!isLoggedIn" routerLink="/admin">Admin Board</a></div>
     </div>
     <!--<div fxFlex></div><div>-->
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs >
