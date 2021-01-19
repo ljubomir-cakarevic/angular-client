@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'welcome', component: WelcomeComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'employee', component: EmployeeComponent, canActivate: [AuthGuard] },
-  { path: 'update-employee/:id', component: UpdateEmployeeComponent},
+  { path: 'update-employee/:id', component: UpdateEmployeeComponent, canActivate: [AuthGuard]},
   { path: '', redirectTo: 'welcome', pathMatch: 'full' }
 ];
 

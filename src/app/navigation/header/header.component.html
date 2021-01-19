@@ -9,7 +9,7 @@
       <div>
         <ul fxLayout fxLayoutGap="10px" fxHide.xs class="navigation-items">
           <li><a routerLink="/welcome">Home </a></li>
-          <li *ngIf="showAdminBoard"><a routerLink="/admin">Admin Board</a></li>
+          <li *ngIf="showAdminBoard"><a routerLink="/employee">Admin Board</a></li>
           <li *ngIf="showModeratorBoard"><a routerLink="/mod">Moderator Board</a></li>
           <li><a *ngIf="isLoggedIn" routerLink="/user">User</a></li>
         </ul>

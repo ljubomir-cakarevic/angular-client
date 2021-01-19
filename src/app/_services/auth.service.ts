@@ -41,21 +41,24 @@ export class AuthService {
   
   loggedIn(){
     //check 
-    return !localStorage.getItem('auth-token');
+    return !!localStorage.getItem('auth-token');
     
   }
 
-  private authSuccessufully(): void{
-  
-      this.router.navigate(['/employee']);
-     
+  private authSuccessufully(): boolean{
+    const user: any = this.tokenStorageService.getUser();
+    if (user.roles === 'ROLE_ADMIN') {
+      this.router.navigate(['/admin']);
+    }
+    return true;
   }
 
 
   logout(): void {
     this.tokenStorageService.signOut();
-    this.router.navigate(['/login']);
-    //window.location.reload();
+    window.location.reload();
+    this.router.navigate(['/']);
+    window.location.reload();
   }
   
 }
