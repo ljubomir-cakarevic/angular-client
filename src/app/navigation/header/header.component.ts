@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit  {
   isLoggedIn = false;
   showAdminBoard = false;
   showModeratorBoard = false;
-  username?: string;
+  username?: string; 
 
   constructor(private tokenStorageService: TokenStorageService,  private authService: AuthService) { } 
 
@@ -38,10 +38,10 @@ export class HeaderComponent implements OnInit  {
   onToggleSidenav() {
     this.sidenavToggle.emit();
   }
-
+ 
   onLogout(){
     this.authService.logout();
-  } 
+  }  
  
   
 

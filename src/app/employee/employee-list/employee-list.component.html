@@ -12,21 +12,21 @@
     </ng-container>
   
     <ng-container matColumnDef="firstName">
-      <mat-header-cell mat-sort-header *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-header-cell  *matHeaderCellDef mat-sort-header> First Name </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <span class="mobile-label">First Name</span> {{ element.firstName }} 
       </mat-cell>
     </ng-container>
   
     <ng-container matColumnDef="lastName">
-      <mat-header-cell mat-sort-header *matHeaderCellDef> Last Name </mat-header-cell>
+      <mat-header-cell  *matHeaderCellDef mat-sort-header> Last Name </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <span class="mobile-label">Last Name</span> {{ element.lastName }} 
       </mat-cell>
     </ng-container>
   
     <ng-container matColumnDef="emailId">
-      <mat-header-cell mat-sort-header *matHeaderCellDef> Email Id </mat-header-cell>
+      <mat-header-cell  *matHeaderCellDef mat-sort-header> Email Id </mat-header-cell>
       <mat-cell *matCellDef="let element">
         <span class="mobile-label">Email Id</span> {{ element.emailId }} 
       </mat-cell>
@@ -45,6 +45,7 @@
 
 </mat-table>
 
+<mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 
 </div> 
   

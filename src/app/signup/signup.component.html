@@ -40,11 +40,11 @@
               <mat-error>Has to be at least 6 characters long.</mat-error>
         </mat-form-field>
         <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Signup</button>
-        <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        <div fxLayout fxLayoutAlign="center" class="alert-warning" *ngIf="f.submitted && isSignUpFailed">
             Signup failed!<br />{{ errorMessage }}
           </div>
     </form>
-    <div fxLayout fxLayoutAlign="center" class="alert alert-success" *ngIf="isSuccessful">
-        Your registration is successful!
+    <div fxLayout fxLayoutAlign="center" class="alert-success" *ngIf="isSuccessful">
+        Your registration is successful! Please login!
       </div>
 </section>

@@ -12,7 +12,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
-import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
@@ -25,14 +24,14 @@ import { CreateEmployeeComponent } from './employee/create-employee/create-emplo
 import { EmployeeDetailsComponent } from './employee/employee-details/employee-details.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
-import { AdminComponent } from './admin/admin.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     IndexComponent,
-    HomeComponent,
     SignupComponent,
     HeaderComponent,
     SidenavListComponent,
@@ -42,7 +41,8 @@ import { AdminComponent } from './admin/admin.component';
     EmployeeDetailsComponent,
     EmployeeComponent,
     UpdateEmployeeComponent,
-    AdminComponent,
+    ProfileComponent,
+    BoardAdminComponent,
     
   ],
   imports: [

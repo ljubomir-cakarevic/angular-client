@@ -2,13 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../_services/user.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-board-admin',
+  templateUrl: './board-admin.component.html',
+  styleUrls: ['./board-admin.component.css']
 })
-export class AdminComponent implements OnInit {
-
-  content: any;
+export class BoardAdminComponent implements OnInit {
+  content?: string;
 
   constructor(private userService: UserService) { }
 
@@ -18,9 +17,8 @@ export class AdminComponent implements OnInit {
         this.content = data;
       },
       err => {
-        this.content = JSON.parse(err.errorr).messagge;
+        this.content = JSON.parse(err.error).message;
       }
     );
   }
-
 }

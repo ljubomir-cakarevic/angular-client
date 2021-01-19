@@ -15,6 +15,10 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthService {
+
+  isLoggedIn = false;
+  roles: any;
+
   constructor(private http: HttpClient, private router: Router,
      private tokenStorageService: TokenStorageService) { }
 
@@ -28,7 +32,6 @@ export class AuthService {
   }
 
   register(username: string, email: string, password: string): Observable<any> {
-    this.authSuccessufully();
     return this.http.post(AUTH_API + 'signup', {
       username,
       email,
@@ -43,14 +46,16 @@ export class AuthService {
   }
 
   private authSuccessufully(): void{
-     this.router.navigate(['/employee']);
+  
+      this.router.navigate(['/employee']);
+     
   }
+
 
   logout(): void {
     this.tokenStorageService.signOut();
     this.router.navigate(['/login']);
     //window.location.reload();
   }
-
   
 }
