@@ -26,6 +26,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { BoardAdminComponent } from './board-admin/board-admin.component';
     UpdateEmployeeComponent,
     ProfileComponent,
     BoardAdminComponent,
+    FooterComponent,
     
   ],
   imports: [

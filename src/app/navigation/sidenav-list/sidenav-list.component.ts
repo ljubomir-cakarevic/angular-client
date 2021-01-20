@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { AuthService } from 'src/app/_services/auth.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -9,10 +10,28 @@ import { AuthService } from 'src/app/_services/auth.service';
 export class SidenavListComponent implements OnInit {
   @Output() closeSidenav = new EventEmitter();
 
-  constructor(private authService: AuthService) { }
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username?: string; 
+  
+  constructor(private authService: AuthService, private tokenStorageService: TokenStorageService) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
   }
+  
 
   onClose() {
     this.closeSidenav.emit();

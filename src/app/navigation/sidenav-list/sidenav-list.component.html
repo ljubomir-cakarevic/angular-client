@@ -7,6 +7,18 @@
       <mat-icon>input</mat-icon>
       <span class="nav-caption">Login</span>
     </a>
+    <a mat-list-item routerLink="/welcome" (click)="onClose()">
+      <mat-icon>home</mat-icon>
+      <span class="nav-caption">Home</span>
+    </a>
+    <a mat-list-item routerLink="/employee" (click)="onClose()" *ngIf="showAdminBoard">
+      <mat-icon>face</mat-icon>
+      <span class="nav-caption">Admin Board</span>
+    </a>
+    <a mat-list-item routerLink="/mod" (click)="onClose()" *ngIf="showModeratorBoard">
+      <mat-icon>face</mat-icon>
+      <span class="nav-caption">Moderator Board</span>
+    </a>
     <mat-list-item>
       <button mat-icon-button (click)="onLogout()">
         <mat-icon>eject</mat-icon>

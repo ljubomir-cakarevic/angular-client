@@ -48,7 +48,7 @@ export class AuthService {
   private authSuccessufully(): boolean{
     const user: any = this.tokenStorageService.getUser();
     if (user.roles === 'ROLE_ADMIN') {
-      this.router.navigate(['/admin']);
+      //this.router.navigate(['/admin']);
     }
     return true;
   }
