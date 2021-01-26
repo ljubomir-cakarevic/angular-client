@@ -16,8 +16,19 @@
         </mat-form-field>
 
         <mat-form-field hintLabel="Field must not be empty." appearance="outline">
+            <mat-label>Age</mat-label>
+            <input matInput [(ngModel)] = "employee.age" name = "age">
+        </mat-form-field>
+
+        <mat-form-field hintLabel="Field must not be empty." appearance="outline">
             <mat-label>Email</mat-label>
             <input matInput [(ngModel)] = "employee.emailId" name = "emailId">
         </mat-form-field>
+
+        <mat-form-field hintLabel="Field must not be empty." appearance="outline">
+            <mat-label>Position</mat-label>
+            <input matInput [(ngModel)] = "employee.position" name = "position">
+        </mat-form-field>
+
         <button type="submit" mat-raised-button color="primary">Edit Employee</button>
 </form>

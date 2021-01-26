@@ -8,7 +8,7 @@ import { Employee } from '../model/employee';
 })
 export class EmployeeService {
 
-  private baseURL = "http://localhost:8080/boot-camp-project/api/v1/employees";
+  private baseURL = "http://localhost:8080/boot-camp-project/api/data/employees";
 
   constructor(private httpClient: HttpClient) { }
   
