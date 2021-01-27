@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/_services/employee.service';
 import { Employee } from 'src/app/model/employee';
 import { ActivatedRoute, Router } from '@angular/router';
+import { DialogService } from 'src/app/_services/dialog.service';
+import { NotificationService } from 'src/app/_services/notification.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-update-employee',
@@ -12,9 +15,13 @@ export class UpdateEmployeeComponent implements OnInit {
 
   id: any;
   employee: Employee = new Employee();
+  
   constructor(private employeeService: EmployeeService,
     private route: ActivatedRoute,
-    private router: Router) { }
+    private router: Router,
+    private dialog: MatDialog,
+    private dialogService: DialogService,
+    private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -25,20 +32,32 @@ export class UpdateEmployeeComponent implements OnInit {
   }
 
   onSubmit(){
-    this.employeeService.updateEmployee(this.id, this.employee).subscribe( data =>{
+
+    this.dialogService.openUpdateDialog('Update employee?')
+      .afterClosed().subscribe(res => {
+        if (res) {
+          this.employeeService.updateEmployee(this.id, this.employee).subscribe(data => {
+            console.log(data);
+            this.goToEmployeeList();
+          });
+          this.notificationService.warn('Successfully updated!');
+        }
+      });
+  
+    /* this.employeeService.updateEmployee(this.id, this.employee).subscribe( data =>{
       this.goToEmployeeList();
       //this.reloadPage();
     }
-    , error => console.log(error));
+    , error => console.log(error)); */
   }
 
-  goToEmployeeList(){
-    this.router.navigate(['/employee']);
+  
 
+  goToEmployeeList() {
+    this.router.navigate(['/employee']);
   }
 
   reloadPage(): void {
     window.location.reload();
-    
   }
 }

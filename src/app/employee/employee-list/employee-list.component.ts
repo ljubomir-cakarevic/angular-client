@@ -1,16 +1,13 @@
-import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { EmployeeService } from 'src/app/_services/employee.service';
 import { Router } from '@angular/router';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
-import { Employee } from 'src/app/model/employee';
-import { DataSource } from '@angular/cdk/table';
-import { tap, map } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 import { DialogService } from 'src/app/_services/dialog.service';
 import { NotificationService } from 'src/app/_services/notification.service';
+import { Employee } from 'src/app/model/employee';
 
 
 @Component({
@@ -22,10 +19,7 @@ export class EmployeeListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'age', 'emailId', 'position', 'actions'];
   dataSource: MatTableDataSource<any> | any;
   @ViewChild(MatSort) sort: MatSort | any;
-
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
-
-
 
   constructor(private employeeService: EmployeeService,
     private router: Router,
@@ -33,11 +27,10 @@ export class EmployeeListComponent implements OnInit {
     private dialogService: DialogService,
     private notificationService: NotificationService) { }
 
-
   ngOnInit(): void {
     this.getEmployees()
   }
-
+  
   private getEmployees() {
     this.employeeService.getEmployeesList().subscribe(data => {
       this.dataSource = data;
@@ -48,9 +41,15 @@ export class EmployeeListComponent implements OnInit {
     this.router.navigate(['employee-details', id]);
   }
 
+  /* updateEmployee(id: number) {
+    this.router.navigate(['update-employee', id]);
+  } */
+
   updateEmployee(id: number) {
     this.router.navigate(['update-employee', id]);
   }
+
+
 
   /* deleteEmployee(id: number){
     this.employeeService.deleteEmployee(id).subscribe( data => {
@@ -61,7 +60,7 @@ export class EmployeeListComponent implements OnInit {
 
   deleteEmployee(id: number) {
 
-    this.dialogService.openConfirmDialog('Are you sure to delete this record?')
+    this.dialogService.openDeleteDialog('Delete employee?')
       .afterClosed().subscribe(res => {
         if (res) {
           this.employeeService.deleteEmployee(id).subscribe(data => {
@@ -72,7 +71,6 @@ export class EmployeeListComponent implements OnInit {
         }
       });
   }
-
 
 }
 
