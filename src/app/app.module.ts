@@ -25,7 +25,6 @@ import { EmployeeDetailsComponent } from './employee/employee-details/employee-d
 import { EmployeeComponent } from './employee/employee.component';
 import { UpdateEmployeeComponent } from './employee/update-employee/update-employee.component';
 import { ProfileComponent } from './profile/profile.component';
-import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { FooterComponent } from './footer/footer.component';
 import { DialogDeleteComponent } from './employee/dialog-delete/dialog-delete.component';
 
@@ -44,7 +43,6 @@ import { DialogDeleteComponent } from './employee/dialog-delete/dialog-delete.co
     EmployeeComponent,
     UpdateEmployeeComponent,
     ProfileComponent,
-    BoardAdminComponent,
     FooterComponent,
     DialogDeleteComponent,
     

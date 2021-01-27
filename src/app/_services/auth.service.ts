@@ -57,7 +57,7 @@ export class AuthService {
   logout(): void {
     this.tokenStorageService.signOut();
     window.location.reload();
-    this.router.navigate(['/']);
+    this.router.navigate(['/welcome']);
     window.location.reload();
   }
   

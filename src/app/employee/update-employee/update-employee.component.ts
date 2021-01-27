@@ -40,7 +40,7 @@ export class UpdateEmployeeComponent implements OnInit {
             console.log(data);
             this.goToEmployeeList();
           });
-          this.notificationService.warn('Successfully updated!');
+          this.notificationService.success('Successfully updated!');
         }
       });
   
