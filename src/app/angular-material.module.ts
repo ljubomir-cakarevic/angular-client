@@ -22,6 +22,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from "@angular/material/card";
 
 @NgModule({
   declarations: [],
@@ -47,7 +48,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSortModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
     
   ],
   exports:[
@@ -71,7 +73,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatSortModule,
     MatProgressSpinnerModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ]
 })
 export class AngularMaterialModule { }

@@ -9,7 +9,11 @@ import { TokenStorageService } from '../_services/token-storage.service';
     providedIn: 'root'
   })
 export class AuthGuard implements CanActivate {
-    constructor(private authService: AuthService, private router: Router, private tokenStorage: TokenStorageService) {}
+    
+    constructor(
+        private authService: AuthService, 
+        private router: Router, 
+        private tokenStorage: TokenStorageService) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         /* //if user is logged in(token is present) returns true (can continue to the special route)

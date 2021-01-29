@@ -27,6 +27,7 @@ import { UpdateEmployeeComponent } from './employee/update-employee/update-emplo
 import { ProfileComponent } from './profile/profile.component';
 import { FooterComponent } from './footer/footer.component';
 import { DialogDeleteComponent } from './employee/dialog-delete/dialog-delete.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { DialogDeleteComponent } from './employee/dialog-delete/dialog-delete.co
     ProfileComponent,
     FooterComponent,
     DialogDeleteComponent,
+    UserComponent,
     
   ],
   entryComponents: [ DialogDeleteComponent ],

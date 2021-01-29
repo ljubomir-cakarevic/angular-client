@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { EmployeeService } from 'src/app/_services/employee.service';
 import { Router } from '@angular/router';
-import { MatPaginator, PageEvent } from '@angular/material/paginator';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
@@ -41,22 +41,9 @@ export class EmployeeListComponent implements OnInit {
     this.router.navigate(['employee-details', id]);
   }
 
-  /* updateEmployee(id: number) {
-    this.router.navigate(['update-employee', id]);
-  } */
-
   updateEmployee(id: number) {
     this.router.navigate(['update-employee', id]);
   }
-
-
-
-  /* deleteEmployee(id: number){
-    this.employeeService.deleteEmployee(id).subscribe( data => {
-      console.log(data);
-      this.getEmployees();
-    })
-  } */
 
   deleteEmployee(id: number) {
 

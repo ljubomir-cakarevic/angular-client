@@ -3,6 +3,6 @@ export class Employee {
     firstName: any;
     lastName: any;
     age: any;
-    emailId: any;
+    email: any;
     position: any;
 }

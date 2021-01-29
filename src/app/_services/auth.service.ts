@@ -23,7 +23,7 @@ export class AuthService {
      private tokenStorageService: TokenStorageService) { }
 
   login(username: string, password: string): Observable<any> {
-    this.authSuccessufully();
+    this.authSuccessfully();
    
     return this.http.post(AUTH_API + 'signin', {
       username,
@@ -41,11 +41,13 @@ export class AuthService {
   
   loggedIn(){
     //check 
-    return !!localStorage.getItem('auth-token');
+    // returns true or false(if token exist in browser returns true)
+    //return !!localStorage.getItem('auth-token');
+    return !!sessionStorage.getItem('auth-token');
     
   }
 
-  private authSuccessufully(): boolean{
+  private authSuccessfully(): boolean{
     const user: any = this.tokenStorageService.getUser();
     if (user.roles === 'ROLE_ADMIN') {
       //this.router.navigate(['/admin']);
@@ -53,12 +55,13 @@ export class AuthService {
     return true;
   }
 
-
   logout(): void {
     this.tokenStorageService.signOut();
+    this.router.navigate(['welcome'])
     window.location.reload();
+    /* window.location.reload();
     this.router.navigate(['/welcome']);
-    window.location.reload();
+    window.location.reload(); */
   }
   
 }

@@ -8,13 +8,16 @@ import { SignupComponent } from './signup/signup.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AuthGuard } from './guard/auth.guard';
 import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './user/user.component';
+import { Auth2Guard } from './guard/auth2.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'index', component: IndexComponent },
+  { path: 'user', component: UserComponent, canActivate: [Auth2Guard]},
   { path: 'welcome', component: WelcomeComponent },
-  { path: 'profile', component: ProfileComponent},//, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'employee', component: EmployeeComponent, canActivate: [AuthGuard] },
   { path: 'update-employee/:id', component: UpdateEmployeeComponent, canActivate: [AuthGuard]},
   { path: '', redirectTo: 'welcome', pathMatch: 'full' }
@@ -23,6 +26,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
-  providers: [AuthGuard]
+  providers: [AuthGuard, Auth2Guard]
 })
 export class AppRoutingModule { }
