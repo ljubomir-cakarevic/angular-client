@@ -1,19 +1,9 @@
-<!-- <div fxLayoutAlign="center">  
-    <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder=" example@example.com" name="email" [(ngModel)]="email">
-    </mat-form-field>
-     
-    <button (click)="findUserByEmail()" mat-raised-button color="accent">Search Employee</button>
-</div> -->
-
 <div fxLayoutAlign="center">
     <form class="form" fxLayout="column" fxLayout.gt-md="row">
         <input type="text" placeholder="Search employee by email" name="email" [(ngModel)]="email">
-        <button (click)="findEmployeeByEmail()" >Search Employee</button>
+        <button (click)="findEmployeeByEmail()">Search Employee</button>
     </form>
 </div>
-
 
 <div class="example-container mat-elevation-z8"   fxLayout="column" fxLayoutAlign="center stretch" fxLayoutGap="10px">
 

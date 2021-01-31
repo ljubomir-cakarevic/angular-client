@@ -44,14 +44,7 @@ export class UpdateEmployeeComponent implements OnInit {
         }
       });
   
-    /* this.employeeService.updateEmployee(this.id, this.employee).subscribe( data =>{
-      this.goToEmployeeList();
-      //this.reloadPage();
-    }
-    , error => console.log(error)); */
   }
-
-  
 
   goToEmployeeList() {
     this.router.navigate(['/employee']);

@@ -2,13 +2,10 @@ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { EmployeeService } from 'src/app/_services/employee.service';
 import { Router } from '@angular/router';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogService } from 'src/app/_services/dialog.service';
 import { NotificationService } from 'src/app/_services/notification.service';
-import { Employee } from 'src/app/model/employee';
-
 
 @Component({
   selector: 'app-employee-list',
@@ -17,20 +14,22 @@ import { Employee } from 'src/app/model/employee';
 })
 export class EmployeeListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'firstName', 'lastName', 'age', 'emailId', 'position', 'actions'];
-  dataSource: MatTableDataSource<any> | any;
+  dataSource:any;
   @ViewChild(MatSort) sort: MatSort | any;
   @ViewChild(MatPaginator) paginator: MatPaginator | any;
 
-  constructor(private employeeService: EmployeeService,
+  constructor(
+    private employeeService: EmployeeService,
     private router: Router,
-    private dialog: MatDialog,
+    private dialog: MatDialog, 
     private dialogService: DialogService,
-    private notificationService: NotificationService) { }
+    private notificationService: NotificationService
+    ) { }
 
   ngOnInit(): void {
     this.getEmployees()
   }
-  
+
   private getEmployees() {
     this.employeeService.getEmployeesList().subscribe(data => {
       this.dataSource = data;

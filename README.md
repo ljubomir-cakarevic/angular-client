@@ -8,8 +8,6 @@ User with admin and moderator role can be created through Postman. In this case 
 - moderator
 - user
 
-Example of request body is listed in API (Swagger).
-
 As a user with `ROLE_ADMIN` we can create, edit and delete employees. All employees are shown in table.
 As a user with `ROLE_USER` we can search for employee by email.
 
@@ -40,3 +38,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Status
+
+Project is in progress.
