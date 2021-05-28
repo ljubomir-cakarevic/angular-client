@@ -9,3 +9,9 @@
 .singup-form {
     margin-top: 100px;
 }
+
+.card {
+    width: 500px;
+    margin-left: 400px;
+    background-color: cadetblue;
+}
